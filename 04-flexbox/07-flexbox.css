@@ -1,23 +1,45 @@
 .flex-container {
-  background-color: rgb(190, 190, 231);
+	background-color: rgb(190, 190, 231);
 }
 
 /* Flex Container 1 */
 
+.flex-container-1 {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 /* Flex Container 2 */
+.flex-container-2 {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
 
 /* Flex Container 3 */
-
 /* use height: 400px; on the container */
+.flex-container-3 {
+	align-items: flex-end;
+	flex-wrap: wrap;
+}
 
 /* Flex Container 4 */
+.flex-container-4 {
+	display: flex;
+}
 
 /* Flex Container 5 */
+.flex-container-5 {
+	display: flex-end;
+}
 
 /* Flex Container 6 */
 
 .flex-container-6 .flex-item {
-  width: 400px;
+	width: 400px;
 }
 
 /* use height: 300px; on the container */

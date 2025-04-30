@@ -1,8 +1,12 @@
 .grid-container {
-  background-color: rgb(190, 190, 231);
+	background-color: rgb(190, 190, 231);
 }
 
 /* Grid Container 1 */
+.grid-container-1 {
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr;
+}
 
 /* Grid Container 2 */
 

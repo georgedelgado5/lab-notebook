@@ -14,32 +14,32 @@
 	color: var(--red);
 } */
 
-.dog {
-	color: var(--darkmagenta);
-}
-
-.cat {
+li[id="cat"] {
 	color: var(--teal);
 }
 
-.parrot {
-	color: var(--teal);
+li[class^="p"] {
+	color: var(--green);
 }
 
-.donkey {
+li[class*="do"] {
 	color: var(--royalblue);
 }
 
-.hedgehog {
-	color: var(--darkmagenta);
-}
-
-.cat.dog.parrot {
-	color: var(--royalblue);
+li[class$="g"] {
+	color: var(--violet);
 }
 
 /* Use descendant, child, and sibling selectors for the second part */
 
 section li {
 	color: var(--green);
+}
+
+.first ~ li {
+	color: var(--violet);
+}
+
+.second + li {
+	color: var(--royalblue);
 }
