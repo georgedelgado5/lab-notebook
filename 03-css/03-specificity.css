@@ -1,25 +1,40 @@
 /* Specificity Exercise */
+/* Notes from lecture video 
+X - Y - Z
 
+X: # of id selectors
+	example: #my-id
+Y: # of -class, pseudo-class, and attribute- selectors
+	example: .my-class, [class], :hover
+Z: # of element selectors and pseudo-element selectors
+	example: div, ::selection
+
+Order of specificity is ranked by numbers from left to right
+	example: 1,1,4 vs 1,2,3 -> 1,2,3 is more specific because at "Y", 2 is greater than 1
+*/
 nav .list-item > a {
 	color: var(--purple);
-}
+} /* 0,1,2 */
 
 #main::first-letter {
 	color: var(--purple);
-}
+} /* 1,0,1 */
 
 input[type] {
 	color: var(--purple);
-}
+} /* 0,1,1 */
 
 section .main::first-line {
 	color: var(--purple);
-}
+} /* 0,1,2 */
 
 nav ul.menu li#first a:not([class="visited"]) {
 	color: var(--purple);
-}
+} /* 1,2,4 */
+/* ":not" (pseduo-class) not included in specificity
+but contents of "not" ARE included in specificity  */
 
 div ol li ul li ol li ul li a {
 	color: var(--purple);
-}
+} /* 0,0,10 */
+/* Do not use this type of CSS. It's just used an example to show specificity. */
