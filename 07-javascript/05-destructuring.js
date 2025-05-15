@@ -1,37 +1,54 @@
 const destructureItems = (input) => {
-  // destructure the name and parents of the character and format the output as shown
+	// destructure the name and parents of the character and format the output as shown
 
-  return input;
+	// console.log(
+	// 	input.first,
+	// 	input.last,
+	// 	input.allegiance.parents.mother,
+	// 	input.allegiance.parents.father
+	// );
+
+	// ************************* OR *****************
+	// Using destructuring method:
+
+	const { first, last } = input;
+	const { mother, father } = input.allegiance.parents;
+
+	const result = `${first} ${last}
+    daughter of
+    ${mother} and ${father}`;
+
+	return result;
 };
 
 const sansa = {
-  first: 'Sansa',
-  last: 'Stark',
-  allegiance: {
-    house: 'Winterfell',
-    parents: {
-      mother: 'Catelyn Tully',
-      father: 'Eddard Stark',
-    },
-    animals: {
-      direwolf: 'Lady',
-    },
-  },
+	first: "Sansa",
+	last: "Stark",
+	allegiance: {
+		house: "Winterfell",
+		parents: {
+			mother: "Catelyn Tully",
+			father: "Eddard Stark",
+		},
+		animals: {
+			direwolf: "Lady",
+		},
+	},
 };
 
 const daenerys = {
-  first: 'Daenerys',
-  last: 'Targaryen',
-  allegiance: {
-    house: 'Targaryen',
-    parents: {
-      mother: 'Queen Rhaella',
-      father: 'King Aerys II Targaryen',
-    },
-    animals: {
-      dragons: 'Drogon',
-    },
-  },
+	first: "Daenerys",
+	last: "Targaryen",
+	allegiance: {
+		house: "Targaryen",
+		parents: {
+			mother: "Queen Rhaella",
+			father: "King Aerys II Targaryen",
+		},
+		animals: {
+			dragons: "Drogon",
+		},
+	},
 };
 
 console.log(destructureItems(sansa));
