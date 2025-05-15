@@ -1,10 +1,31 @@
 const formatItems = (input) => {
-  // return a string of the concatenated numbers, separated by commas and with three digits after the decimal point
+	// return a string of the concatenated numbers, separated by commas and with three digits after the decimal point
 
-  // for reference, see the MDN Number page:
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+	// for reference, see the MDN Number page:
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 
-  return input;
+	let results = [];
+
+	// for (let i = 0; i < input.length; i++) {
+	// 	console.log(input[i]);
+	// }
+	/* This is the standard for loop common in most languages */
+	// *********** OR ***********
+	// for (let i in input) {
+	// 	console.log(i, input[i]);
+	// }
+	/* for ~ in - not recommended in jS */
+	// *********** OR ***********
+	for (let item of input) {
+		console.log(item.toFixed(3));
+		results.push(item.toFixed(3));
+	}
+	/* When using for ~ of, the function iterates over each in an element.
+     The item is the value.*/
+	//return input;
+	//return results.join(", ");
+	//OR
+	return results.join(" - ");
 };
 
 console.log(formatItems([1, 4, 17, 26, 41]));

@@ -1,34 +1,48 @@
 let result = {};
 
 const insertItem = (key, value) => {
-  // insertItem the property with key and value into result
-  return key;
+	// insertItem the property with key and value into result
+	result[key] = value;
 };
 
 const deleteItem = (key) => {
-  // remove the property with key from result
-  return key;
+	// remove the property with key from result
+	delete result[key];
 };
 
 const lookupItem = (key) => {
-  // return the value from result that is associated with key
-  return key;
+	// return the value from result that is associated with key
+	if (Object.hasOwn(result, key)) {
+		return result[key];
+	}
+
+	//****************** OR ******************
+	/* MDN recommended using .hasOwn() method instead of .hasOwnProperty()
+    If we use .hasOwnPropery():
+    
+    if (result.hasOwnProperty(key)) {
+      return result[key];
+    };
+    */
+
+	return "Item does not exist";
 };
 
 const printItems = () => {
-  // return a string of the concatenated key in result, separated by commas
+	// return a string of the concatenated key in result, separated by commas
+	return Object.keys(result).join(", ");
 };
 
-insertItem('hello', 'world');
-insertItem('lorem', 'ipsum');
-insertItem('sit', 'amet');
+insertItem("hello", "world");
+insertItem("lorem", "ipsum");
+insertItem("sit", "amet");
 console.log(printItems());
 // expected: 'hello, lorem, sit' (order may be different)
-console.log(lookupItem('lorem'));
+console.log(lookupItem("lorem"));
 // expected: 'ipsum'
 
-deleteItem('lorem');
+deleteItem("lorem");
 console.log(printItems());
 // expected: 'hello, sit' (order may be different)
-console.log(lookupItem('lorem'));
+console.log(lookupItem("lorem"));
 // expected: 'Item does not exist'
